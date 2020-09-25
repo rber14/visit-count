@@ -1,0 +1,16 @@
+#required line version
+version: '3'
+services: 
+#first service
+  redis-server: 
+#uses
+    image: 'redis'
+#second service    
+  node-app: 
+    restart: always
+#look inisde this folder and us this
+    build: .
+#map outside port 4001 to container port 8081
+    ports: 
+      - "4001:8081"
+
